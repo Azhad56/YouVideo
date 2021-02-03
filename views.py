@@ -21,8 +21,9 @@ class GetViews:
         print("check1")
         while(True):
             print("check2")
-            time.sleep(10)
+            time.sleep(20)
             print("check3")
+            time.sleep(20)
             url = random.choice(videos)
             print(url)
             self.driver.get(url)
