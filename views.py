@@ -4,22 +4,25 @@ import time
 import random
 from selenium.webdriver.chrome.options import Options
 
-options = Options()
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')  # Last I checked this was necessary.
-driver = webdriver.Chrome()
 
-videos = ["https://www.youtube.com/watch?v=PkVjkVotWHE",
-          "https://www.youtube.com/watch?v=SrhhVjtm_ew&t"]
+class GetViews:
+    def __init__(self):
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument('--disable-gpu')
+        self.driver = webdriver.Chrome(chrome_options=options)
 
-url = random.choice(videos)
+    def getviews(self):
+        videos = ["https://www.youtube.com/watch?v=PkVjkVotWHE",
+                  "https://www.youtube.com/watch?v=SrhhVjtm_ew&t"]
+        url = random.choice(videos)
+        print(url)
+        self.driver.get(url)
+        while(True):
+            time.sleep(random.randint(10, 20))
+            url = random.choice(videos)
+            print(url)
+            driver.refresh()
 
-driver.get(url)
-
-while(True):
-    time.sleep(random.randint(50, 110))
-    url = random.choice(videos)
-    print(url)
-    driver.refresh()
-# Now you can start using Selenium
-driver.close()
+    def closeBrowser(self):
+        self.driver.close()
