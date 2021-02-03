@@ -22,7 +22,7 @@ class GetViews:
             time.sleep(random.randint(10, 20))
             url = random.choice(videos)
             print(url)
-            driver.refresh()
+            self.driver.refresh()
 
     def closeBrowser(self):
         self.driver.close()
