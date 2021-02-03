@@ -21,7 +21,7 @@ class GetViews:
         print("check1")
         while(True):
             print("check2")
-            time.sleep(300)
+            time.sleep(10)
             print("check3")
             url = random.choice(videos)
             print(url)
